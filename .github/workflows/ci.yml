@@ -128,8 +128,8 @@ jobs:
       - name: Build & push backend
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: Dockerfile.backend
+          context: ./backend
+          file: Dockerfile
           push: ${{ github.ref == 'refs/heads/main' }}
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}-backend:latest
@@ -141,8 +141,8 @@ jobs:
       - name: Build & push model service
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: Dockerfile.model
+          context: ./model_service
+          file: Dockerfile
           push: ${{ github.ref == 'refs/heads/main' }}
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_PREFIX }}-model:latest
@@ -153,8 +153,8 @@ jobs:
       - name: Build & push frontend
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: Dockerfile.frontend
+          context: ./frontend
+          file: Dockerfile
           push: ${{ github.ref == 'refs/heads/main' }}
           build-args: VITE_API_URL=https://api.counselai.app
           tags: |
