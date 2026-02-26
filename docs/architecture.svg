@@ -1,0 +1,258 @@
+<svg viewBox="0 0 1000 580" xmlns="http://www.w3.org/2000/svg" font-family="'DM Sans', 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d0d0f"/>
+      <stop offset="100%" stop-color="#141418"/>
+    </linearGradient>
+    <linearGradient id="gold-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="50%" stop-color="#b8902a"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#4a4a5a"/>
+    </marker>
+    <marker id="arr-gold" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#b8902a"/>
+    </marker>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="580" fill="url(#bg)" rx="12"/>
+
+  <!-- Subtle grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+  </pattern>
+  <rect width="1000" height="580" fill="url(#grid)"/>
+
+  <!-- Gold top line -->
+  <rect x="0" y="0" width="1000" height="1" fill="url(#gold-line)"/>
+
+  <!-- ══ TITLE ══ -->
+  <text x="500" y="38" text-anchor="middle" font-size="15" font-weight="600" fill="#f9f4e8" letter-spacing="0.5">CounselAI — System Architecture</text>
+  <text x="500" y="56" text-anchor="middle" font-size="9" fill="#b8902a" letter-spacing="3" font-family="JetBrains Mono, monospace">AI LEGAL CONTRACT ANALYSIS · FULL-STACK SAAS</text>
+
+  <!-- ══ LAYER LABELS ══ -->
+  <text x="80"  y="84" text-anchor="middle" font-size="8" fill="#32323e" letter-spacing="2" font-family="JetBrains Mono, monospace">CLIENT</text>
+  <text x="260" y="84" text-anchor="middle" font-size="8" fill="#32323e" letter-spacing="2" font-family="JetBrains Mono, monospace">GATEWAY</text>
+  <text x="440" y="84" text-anchor="middle" font-size="8" fill="#32323e" letter-spacing="2" font-family="JetBrains Mono, monospace">BACKEND API</text>
+  <text x="660" y="84" text-anchor="middle" font-size="8" fill="#32323e" letter-spacing="2" font-family="JetBrains Mono, monospace">AI ENGINE</text>
+  <text x="870" y="84" text-anchor="middle" font-size="8" fill="#32323e" letter-spacing="2" font-family="JetBrains Mono, monospace">PERSISTENCE</text>
+
+  <!-- Dividers -->
+  <line x1="163" y1="74" x2="163" y2="520" stroke="#1c1c22" stroke-width="1"/>
+  <line x1="347" y1="74" x2="347" y2="520" stroke="#1c1c22" stroke-width="1"/>
+  <line x1="553" y1="74" x2="553" y2="520" stroke="#1c1c22" stroke-width="1"/>
+  <line x1="770" y1="74" x2="770" y2="520" stroke="#1c1c22" stroke-width="1"/>
+
+  <!-- ══ CLIENT LAYER ══ -->
+  <!-- Browser -->
+  <rect x="16" y="95" width="130" height="80" rx="8" fill="#1c1c22" stroke="#25252d" stroke-width="1.5"/>
+  <rect x="16" y="95" width="130" height="24" rx="8" fill="#25252d"/>
+  <rect x="16" y="107" width="130" height="12" fill="#25252d"/>
+  <circle cx="30" cy="107" r="4" fill="#ef4444" opacity="0.6"/>
+  <circle cx="44" cy="107" r="4" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="58" cy="107" r="4" fill="#22c55e" opacity="0.6"/>
+  <text x="81" y="132" text-anchor="middle" font-size="10" font-weight="600" fill="#e5d4a8">React SPA</text>
+  <text x="81" y="147" text-anchor="middle" font-size="8" fill="#4a4a5a">Vite · TypeScript · Tailwind</text>
+  <text x="81" y="162" text-anchor="middle" font-size="8" fill="#4a4a5a">TanStack Query · Framer</text>
+
+  <!-- Auth pages -->
+  <rect x="16" y="186" width="60" height="40" rx="6" fill="#1c1c22" stroke="#25252d" stroke-width="1"/>
+  <text x="46" y="206" text-anchor="middle" font-size="8.5" fill="#9898b0">Login</text>
+  <text x="46" y="219" text-anchor="middle" font-size="8.5" fill="#9898b0">Register</text>
+
+  <!-- App pages -->
+  <rect x="86" y="186" width="60" height="40" rx="6" fill="#1c1c22" stroke="#25252d" stroke-width="1"/>
+  <text x="116" y="206" text-anchor="middle" font-size="8.5" fill="#9898b0">Dashboard</text>
+  <text x="116" y="219" text-anchor="middle" font-size="8.5" fill="#9898b0">Analysis</text>
+
+  <!-- Upload zone -->
+  <rect x="16" y="238" width="130" height="36" rx="6" fill="#1c1c22" stroke="#b8902a" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="81" y="255" text-anchor="middle" font-size="8.5" fill="#b8902a">Drop Zone Upload</text>
+  <text x="81" y="267" text-anchor="middle" font-size="7.5" fill="#4a4a5a">PDF · DOCX · TXT</text>
+
+  <!-- JWT store -->
+  <rect x="16" y="285" width="130" height="30" rx="6" fill="#1c1c22" stroke="#25252d" stroke-width="1"/>
+  <text x="81" y="302" text-anchor="middle" font-size="8.5" fill="#6b6b82">Zustand store · JWT tokens</text>
+
+  <!-- ══ GATEWAY ══ -->
+  <!-- Nginx -->
+  <rect x="180" y="95" width="148" height="60" rx="8" fill="#1c1c22" stroke="#25252d" stroke-width="1.5"/>
+  <text x="254" y="118" text-anchor="middle" font-size="10" font-weight="600" fill="#e5d4a8">Nginx</text>
+  <text x="254" y="133" text-anchor="middle" font-size="8" fill="#4a4a5a">SSL termination · Compression</text>
+  <text x="254" y="146" text-anchor="middle" font-size="8" fill="#4a4a5a">SPA routing · Static assets</text>
+
+  <!-- CORS + Rate limit -->
+  <rect x="180" y="167" width="70" height="50" rx="6" fill="#1c1c22" stroke="#25252d" stroke-width="1"/>
+  <text x="215" y="186" text-anchor="middle" font-size="8.5" fill="#9898b0">CORS</text>
+  <text x="215" y="200" text-anchor="middle" font-size="8.5" fill="#9898b0">Origin</text>
+  <text x="215" y="212" text-anchor="middle" font-size="8.5" fill="#9898b0">Policy</text>
+
+  <rect x="258" y="167" width="70" height="50" rx="6" fill="#1c1c22" stroke="#25252d" stroke-width="1"/>
+  <text x="293" y="186" text-anchor="middle" font-size="8.5" fill="#9898b0">Rate</text>
+  <text x="293" y="200" text-anchor="middle" font-size="8.5" fill="#9898b0">Limiting</text>
+  <text x="293" y="212" text-anchor="middle" font-size="8.5" fill="#9898b0">Redis</text>
+
+  <!-- ══ BACKEND API ══ -->
+  <!-- Main box -->
+  <rect x="368" y="95" width="168" height="90" rx="8" fill="#1c1c22" stroke="#b8902a" stroke-width="1.5"/>
+  <text x="452" y="116" text-anchor="middle" font-size="10" font-weight="600" fill="#e5d4a8">FastAPI Backend</text>
+  <text x="452" y="130" text-anchor="middle" font-size="8" fill="#4a4a5a">Python 3.11 · Async/await</text>
+
+  <!-- Endpoint pills -->
+  <rect x="376" y="138" width="72" height="16" rx="3" fill="#0d0d0f"/>
+  <text x="412" y="149" text-anchor="middle" font-size="7.5" fill="#b8902a">POST /auth/*</text>
+  <rect x="454" y="138" width="74" height="16" rx="3" fill="#0d0d0f"/>
+  <text x="491" y="149" text-anchor="middle" font-size="7.5" fill="#b8902a">GET/POST /contracts</text>
+  <rect x="376" y="158" width="72" height="16" rx="3" fill="#0d0d0f"/>
+  <text x="412" y="169" text-anchor="middle" font-size="7.5" fill="#b8902a">POST /upload</text>
+  <rect x="454" y="158" width="74" height="16" rx="3" fill="#0d0d0f"/>
+  <text x="491" y="169" text-anchor="middle" font-size="7.5" fill="#b8902a">GET /stats</text>
+
+  <!-- Auth service -->
+  <rect x="368" y="200" width="75" height="55" rx="6" fill="#1c1c22" stroke="#25252d" stroke-width="1"/>
+  <text x="405" y="218" text-anchor="middle" font-size="9" font-weight="500" fill="#c4c4d4">Auth</text>
+  <text x="405" y="232" text-anchor="middle" font-size="7.5" fill="#4a4a5a">JWT access</text>
+  <text x="405" y="244" text-anchor="middle" font-size="7.5" fill="#4a4a5a">Refresh rotate</text>
+  <text x="405" y="248" text-anchor="middle" font-size="7.5" fill="#4a4a5a">bcrypt hash</text>
+
+  <!-- Contract service -->
+  <rect x="453" y="200" width="83" height="55" rx="6" fill="#1c1c22" stroke="#25252d" stroke-width="1"/>
+  <text x="494" y="218" text-anchor="middle" font-size="9" font-weight="500" fill="#c4c4d4">Contract</text>
+  <text x="494" y="232" text-anchor="middle" font-size="7.5" fill="#4a4a5a">Parse PDF/DOCX</text>
+  <text x="494" y="244" text-anchor="middle" font-size="7.5" fill="#4a4a5a">Quota enforce</text>
+  <text x="494" y="248" text-anchor="middle" font-size="7.5" fill="#4a4a5a">BG tasks</text>
+
+  <!-- Background tasks -->
+  <rect x="368" y="267" width="168" height="35" rx="6" fill="#1c1c22" stroke="#25252d" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="452" y="283" text-anchor="middle" font-size="8.5" fill="#6b6b82">Background Tasks (FastAPI)</text>
+  <text x="452" y="296" text-anchor="middle" font-size="7.5" fill="#4a4a5a">Async analysis · No queue required</text>
+
+  <!-- ══ AI ENGINE ══ -->
+  <rect x="578" y="95" width="175" height="105" rx="8" fill="#1c1c22" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="665" y="116" text-anchor="middle" font-size="10" font-weight="600" fill="#e5d4a8">Model Service</text>
+  <text x="665" y="130" text-anchor="middle" font-size="8" fill="#4a4a5a">Separate microservice · Port 8001</text>
+
+  <!-- LLM options -->
+  <rect x="586" y="138" width="50" height="22" rx="4" fill="#0d0d0f" stroke="#22c55e" stroke-width="0.5"/>
+  <text x="611" y="150" text-anchor="middle" font-size="7.5" fill="#22c55e">GPT-4o</text>
+  <text x="611" y="158" text-anchor="middle" font-size="6.5" fill="#4a4a5a">OpenAI</text>
+
+  <rect x="643" y="138" width="50" height="22" rx="4" fill="#0d0d0f" stroke="#22c55e" stroke-width="0.5"/>
+  <text x="668" y="150" text-anchor="middle" font-size="7.5" fill="#22c55e">Claude</text>
+  <text x="668" y="158" text-anchor="middle" font-size="6.5" fill="#4a4a5a">Anthropic</text>
+
+  <rect x="700" y="138" width="45" height="22" rx="4" fill="#0d0d0f" stroke="#6b6b82" stroke-width="0.5"/>
+  <text x="722" y="150" text-anchor="middle" font-size="7.5" fill="#6b6b82">Rules</text>
+  <text x="722" y="158" text-anchor="middle" font-size="6.5" fill="#4a4a5a">Fallback</text>
+
+  <text x="665" y="182" text-anchor="middle" font-size="8" fill="#4a4a5a">Auto-selects by env var availability</text>
+  <text x="665" y="194" text-anchor="middle" font-size="8" fill="#4a4a5a">Returns structured JSON · ≤ 15s</text>
+
+  <!-- Analysis output -->
+  <rect x="578" y="213" width="175" height="95" rx="6" fill="#1c1c22" stroke="#25252d" stroke-width="1"/>
+  <text x="665" y="230" text-anchor="middle" font-size="9" font-weight="500" fill="#c4c4d4">Analysis Output</text>
+  <text x="586" y="246" font-size="7.5" fill="#4a4a5a">• Overall risk score (0–100)</text>
+  <text x="586" y="259" font-size="7.5" fill="#4a4a5a">• Per-clause risk · explanation</text>
+  <text x="586" y="272" font-size="7.5" fill="#4a4a5a">• Plain-English translations</text>
+  <text x="586" y="285" font-size="7.5" fill="#4a4a5a">• Negotiation suggestions</text>
+  <text x="586" y="298" font-size="7.5" fill="#4a4a5a">• Priority recommendations</text>
+  <text x="586" y="301" font-size="7.5" fill="#4a4a5a">• Parties · dates · obligations</text>
+
+  <!-- ══ PERSISTENCE ══ -->
+  <!-- PostgreSQL -->
+  <rect x="790" y="95" width="190" height="70" rx="8" fill="#1c1c22" stroke="#25252d" stroke-width="1.5"/>
+  <text x="885" y="116" text-anchor="middle" font-size="10" font-weight="600" fill="#e5d4a8">PostgreSQL 16</text>
+  <text x="885" y="131" text-anchor="middle" font-size="8" fill="#4a4a5a">users · contracts · analyses · clauses</text>
+  <text x="885" y="145" text-anchor="middle" font-size="8" fill="#4a4a5a">SQLAlchemy async · Alembic migrations</text>
+  <text x="885" y="157" text-anchor="middle" font-size="7.5" fill="#32323e">Connection pool · UUID primary keys</text>
+
+  <!-- Redis -->
+  <rect x="790" y="178" width="190" height="50" rx="8" fill="#1c1c22" stroke="#25252d" stroke-width="1.5"/>
+  <text x="885" y="198" text-anchor="middle" font-size="10" font-weight="600" fill="#e5d4a8">Redis 7</text>
+  <text x="885" y="213" text-anchor="middle" font-size="8" fill="#4a4a5a">Rate limiting · Session cache</text>
+  <text x="885" y="226" text-anchor="middle" font-size="7.5" fill="#32323e">LRU eviction · 256MB max</text>
+
+  <!-- File storage -->
+  <rect x="790" y="241" width="190" height="40" rx="6" fill="#1c1c22" stroke="#25252d" stroke-width="1"/>
+  <text x="885" y="259" text-anchor="middle" font-size="9" fill="#c4c4d4">File Storage</text>
+  <text x="885" y="272" text-anchor="middle" font-size="7.5" fill="#4a4a5a">Docker volume (dev) · S3 (prod)</text>
+
+  <!-- ══ FLOW ARROWS ══ -->
+  <!-- Browser → Nginx -->
+  <line x1="147" y1="135" x2="179" y2="135" stroke="#4a4a5a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- Nginx → Backend -->
+  <line x1="328" y1="135" x2="367" y2="135" stroke="#4a4a5a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- Backend → Model -->
+  <line x1="536" y1="150" x2="577" y2="160" stroke="#b8902a" stroke-width="1.5" marker-end="url(#arr-gold)"/>
+  <!-- Backend → Postgres -->
+  <line x1="536" y1="130" x2="789" y2="120" stroke="#4a4a5a" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <!-- Backend → Redis -->
+  <line x1="536" y1="145" x2="789" y2="200" stroke="#4a4a5a" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <!-- Model → Postgres (results) -->
+  <line x1="753" y1="170" x2="789" y2="150" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arr)"/>
+
+  <!-- ══ BOTTOM STRIP: ENGINEERING FEATURES ══ -->
+  <rect x="16" y="370" width="965" height="140" rx="8" fill="#0d0d0f" stroke="#1c1c22" stroke-width="1"/>
+  <text x="500" y="390" text-anchor="middle" font-size="9" fill="#b8902a" letter-spacing="2" font-family="JetBrains Mono, monospace">ENGINEERING HIGHLIGHTS</text>
+
+  <!-- Column 1: Auth -->
+  <text x="50" y="412" font-size="9" font-weight="600" fill="#e5d4a8">🔐 Authentication</text>
+  <text x="50" y="428" font-size="8" fill="#4a4a5a">• JWT access (24h) + refresh (30d)</text>
+  <text x="50" y="440" font-size="8" fill="#4a4a5a">• Rotation-on-use refresh tokens</text>
+  <text x="50" y="452" font-size="8" fill="#4a4a5a">• bcrypt password hashing</text>
+  <text x="50" y="464" font-size="8" fill="#4a4a5a">• OAuth2 password flow (Swagger)</text>
+  <text x="50" y="476" font-size="8" fill="#4a4a5a">• Token revocation list in Redis</text>
+  <text x="50" y="488" font-size="8" fill="#4a4a5a">• Protected routes (React)</text>
+
+  <!-- Column 2: Scale -->
+  <text x="230" y="412" font-size="9" font-weight="600" fill="#e5d4a8">⚡ Performance</text>
+  <text x="230" y="428" font-size="8" fill="#4a4a5a">• Fully async Python (asyncpg)</text>
+  <text x="230" y="440" font-size="8" fill="#4a4a5a">• Background tasks (no queue)</text>
+  <text x="230" y="452" font-size="8" fill="#4a4a5a">• DB connection pooling</text>
+  <text x="230" y="464" font-size="8" fill="#4a4a5a">• TanStack Query (React cache)</text>
+  <text x="230" y="476" font-size="8" fill="#4a4a5a">• Nginx gzip + asset caching</text>
+  <text x="230" y="488" font-size="8" fill="#4a4a5a">• Polling with smart intervals</text>
+
+  <!-- Column 3: AI -->
+  <text x="410" y="412" font-size="9" font-weight="600" fill="#e5d4a8">🧠 AI Analysis</text>
+  <text x="410" y="428" font-size="8" fill="#4a4a5a">• GPT-4o / Claude / rule-based</text>
+  <text x="410" y="440" font-size="8" fill="#4a4a5a">• Auto-fallback chain</text>
+  <text x="410" y="452" font-size="8" fill="#4a4a5a">• Structured JSON output</text>
+  <text x="410" y="464" font-size="8" fill="#4a4a5a">• 7 risk clause types</text>
+  <text x="410" y="476" font-size="8" fill="#4a4a5a">• PDF / DOCX / TXT parsing</text>
+  <text x="410" y="488" font-size="8" fill="#4a4a5a">• Independent scaling</text>
+
+  <!-- Column 4: DevOps -->
+  <text x="590" y="412" font-size="9" font-weight="600" fill="#e5d4a8">🚀 DevOps</text>
+  <text x="590" y="428" font-size="8" fill="#4a4a5a">• Multi-stage Dockerfiles</text>
+  <text x="590" y="440" font-size="8" fill="#4a4a5a">• docker-compose (5 services)</text>
+  <text x="590" y="452" font-size="8" fill="#4a4a5a">• GitHub Actions CI/CD</text>
+  <text x="590" y="464" font-size="8" fill="#4a4a5a">• 6-stage pipeline</text>
+  <text x="590" y="476" font-size="8" fill="#4a4a5a">• Multi-arch builds (amd64/arm64)</text>
+  <text x="590" y="488" font-size="8" fill="#4a4a5a">• Zero-downtime deploy</text>
+
+  <!-- Column 5: Testing -->
+  <text x="770" y="412" font-size="9" font-weight="600" fill="#e5d4a8">🧪 Quality</text>
+  <text x="770" y="428" font-size="8" fill="#4a4a5a">• 30+ unit + integration tests</text>
+  <text x="770" y="440" font-size="8" fill="#4a4a5a">• 75%+ code coverage target</text>
+  <text x="770" y="452" font-size="8" fill="#4a4a5a">• Ruff linting + formatting</text>
+  <text x="770" y="464" font-size="8" fill="#4a4a5a">• Bandit security scan</text>
+  <text x="770" y="476" font-size="8" fill="#4a4a5a">• Safety dependency check</text>
+  <text x="770" y="488" font-size="8" fill="#4a4a5a">• TypeScript strict mode</text>
+
+  <!-- Footer -->
+  <line x1="16" y1="522" x2="981" y2="522" stroke="#1c1c22" stroke-width="1"/>
+  <text x="500" y="542" text-anchor="middle" font-size="8" fill="#32323e" font-family="JetBrains Mono, monospace">
+    React · TypeScript · FastAPI · PostgreSQL · Redis · Docker · GitHub Actions · OpenAI / Anthropic
+  </text>
+  <text x="500" y="557" text-anchor="middle" font-size="7.5" fill="#25252d">
+    Built for Upwork Portfolio — demonstrates full-stack product thinking · microservices · auth · AI integration · DevOps
+  </text>
+</svg>

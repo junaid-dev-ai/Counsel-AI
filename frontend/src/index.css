@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: #141418; }
+  ::-webkit-scrollbar-thumb { background: #32323e; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #4a4a5a; }
+
+  ::selection { background: rgba(212, 168, 67, 0.25); color: #fdfbf7; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold-500 hover:bg-gold-400 text-ink-900 font-sans font-semibold
+           px-5 py-2.5 rounded-lg transition-all duration-200 
+           hover:shadow-lg hover:shadow-gold-500/20 active:scale-95 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply border border-ink-500 hover:border-ink-400 text-ink-200 
+           hover:text-ink-100 hover:bg-ink-700/50 font-sans font-medium
+           px-5 py-2.5 rounded-lg transition-all duration-200 active:scale-95
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .card {
+    @apply bg-ink-800 border border-ink-600 rounded-xl;
+  }
+  .input {
+    @apply w-full bg-ink-700 border border-ink-500 rounded-lg px-4 py-2.5
+           text-ink-100 placeholder-ink-300 font-sans text-sm
+           focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500/30
+           transition-colors duration-200;
+  }
+  .risk-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full 
+           text-xs font-mono font-medium border uppercase tracking-wider;
+  }
+}
